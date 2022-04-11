@@ -9,6 +9,9 @@ public class Circle implements Shape{
         Random random = new Random();
         r = range * random.nextDouble();
     }
+    public Circle (int r) {
+        this.r = r;
+    }
 
     public String getType() {
         return "Круг (r=" + String.format("%.2f", r) + ")";

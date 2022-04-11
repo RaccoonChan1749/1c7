@@ -12,6 +12,11 @@ public class Rectangle implements Shape{
         b = range * random.nextDouble();
     }
 
+    public Rectangle (double a, double b) {
+        this.a = a;
+        this.b = b;
+    }
+
     public String getType() {
         return "Квадрат (a=" + String.format("%.2f", a) + "; b=" + String.format("%.2f", b) + ")";
     }

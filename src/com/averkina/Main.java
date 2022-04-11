@@ -4,6 +4,23 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static int maxShape(Shape strategy[]){
+        double maxArea = 0;
+        int maxIndex = 0;
+        for(int i = 0; i < strategy.length; i++) {
+            if(strategy[i] == null){
+                return -1;
+            }
+
+            if(maxArea < strategy[i].getArea()) {
+                maxArea = strategy[i].getArea();
+                maxIndex = i;
+            }
+        }
+
+        return maxIndex;
+    }
+
     public static void main(String[] args) {
         Shape strategy[];
         Scanner in = new Scanner(System.in);
@@ -57,14 +74,7 @@ public class Main {
         }
         System.out.printf("------------------------------------------\n");
 
-        double maxArea = 0;
-        int maxIndex = 0;
-        for(int i = 0; i < amount; i++) {
-            if(maxArea < strategy[i].getArea()) {
-                maxArea = strategy[i].getArea();
-                maxIndex = i;
-            }
-        }
+        int maxIndex = Main.maxShape(strategy);
 
         System.out.println("Максимальная площадь: ");
         System.out.print(strategy[maxIndex].getType());

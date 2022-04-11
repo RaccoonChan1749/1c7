@@ -12,6 +12,11 @@ public class Triangle implements Shape{
         h = range * random.nextDouble();
     }
 
+    public Triangle (double a, double h) {
+        this.a = a;
+        this.h = h;
+    }
+
     public String getType() {
         return "Треугольник (h=" + String.format("%.2f", h) + "; a=" + String.format("%.2f", a) + ")";
     }
